@@ -1,17 +1,13 @@
 import os
 import json
 from datetime import datetime
-from dotenv import load_dotenv
 from urllib.request import urlopen
+from settings import *
 
 import telegram
 
+# Temporal filename
 FILENAME = "current.jpeg"
-TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
-TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
-MOTIONEYEOS_URL = os.getenv('MOTIONEYEOS_URL')
-MOTIONEYEOS_USER =  os.getenv('MOTIONEYEOS_USER')
-MOTIONEYEOS_API_KEY =  os.getenv('MOTIONEYEOS_API_KEY')
 
 # Get current date and time
 now = datetime.now()

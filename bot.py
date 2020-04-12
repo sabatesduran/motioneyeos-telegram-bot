@@ -7,10 +7,10 @@ Basic example for a bot that uses inline keyboards.
 """
 import logging
 import os
-from dotenv import load_dotenv
 import requests
 from urllib.request import urlopen
 from datetime import datetime
+from settings import *
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ChatAction, ParseMode
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
@@ -19,16 +19,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-load_dotenv()
-
-LIST_OF_ADMINS = json.loads(os.getenv('LIST_OF_ADMINS'))
-TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
-MOTIONEYEOS_URL = os.getenv('MOTIONEYEOS_URL')
-MOTIONEYEOS_USER =  os.getenv('MOTIONEYEOS_USER')
-MOTIONEYEOS_API_KEY =  os.getenv('MOTIONEYEOS_API_KEY')
-
 def is_admin(user):
-  return user.id in LIST_OF_ADMINS
+  return user.id in get_list_of_admins()
 
 def get_chat_id(update):
   return update.effective_chat.id
@@ -48,6 +40,7 @@ def get_reply_markup():
 
 def start(update, context):
     user = update.message.from_user
+
     if is_admin(user):
       update.message.reply_text(f'Hi {user.first_name}!\nWhat do you want to do?:', reply_markup=get_reply_markup())
     else:
