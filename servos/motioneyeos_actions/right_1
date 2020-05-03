@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3.7 /home/pi/motioneyeos-telegram-bot/servos/servo_position_controller.py right
