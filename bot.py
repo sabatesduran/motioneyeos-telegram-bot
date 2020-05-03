@@ -10,7 +10,7 @@ import os
 import requests
 from urllib.request import urlopen
 from datetime import datetime
-from settings import *
+from bot_settings import *
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ChatAction, ParseMode
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler

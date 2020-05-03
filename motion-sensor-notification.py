@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 from urllib.request import urlopen
-from settings import *
+from bot_settings import *
 
 import telegram
 

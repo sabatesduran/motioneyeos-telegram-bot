@@ -4,7 +4,7 @@ import json
 
 from gpiozero import AngularServo
 from time import sleep
-from settings import VERTICAL_SERVO_PIN, HORITZONTAL_SERVO_PIN, DEFAULT_SERVO_MOVEMENT, SERVOS_CONFIG_FILE, SERVO_ANGLE_MIN, SERVO_ANGLE_MAX
+from servo_settings import *
 
 DIRECTION = sys.argv[1]
 
