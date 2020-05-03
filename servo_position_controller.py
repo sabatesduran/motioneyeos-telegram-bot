@@ -86,8 +86,8 @@ def main():
     if servo_info is not None:
         servo = AngularServo(
             servo_info['pin'],
-            min_angle=float(SERVO_ANGLE_MIN),
-            max_angle=float(SERVO_ANGLE_MAX),
+            min_angle=SERVO_ANGLE_MIN,
+            max_angle=SERVO_ANGLE_MAX,
             min_pulse_width=0.0006,
             max_pulse_width=0.0024
         )
