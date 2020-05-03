@@ -63,9 +63,9 @@ def move(with_servo, angle):
     servo = get_servo_pin_from_direction()
     current_angle = get_current_angle_from_servo()
 
-    if DIRECTION in ['up', 'right']:
+    if DIRECTION in ['down', 'right']:
         with_servo.angle = get_new_angle('min', current_angle, angle)
-    elif DIRECTION in ['down', 'left']:
+    elif DIRECTION in ['up', 'left']:
         with_servo.angle = get_new_angle('max', current_angle, angle)
     elif DIRECTION == 'home':
         with_servo.mid()
