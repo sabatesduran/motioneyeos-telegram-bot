@@ -26,7 +26,7 @@ def write_current_servo_angle_to_file(servo, angle):
     config = get_config()
     config[servo] = angle
     with open(SERVOS_CONFIG_FILE, 'w') as f:
-            json.dump(config, f)
+        json.dump(config, f)
 
 
 def get_current_angle_from_servo():        
@@ -34,7 +34,7 @@ def get_current_angle_from_servo():
     
     config = get_config()
 
-    return config[servo['key']]
+    return float(config[servo['key']])
 
 
 def get_servo_pin_from_direction():
@@ -80,7 +80,7 @@ def main():
         angle = float(sys.argv[2])
     except Exception:
         print(f"Angle movement set to default ({DEFAULT_SERVO_MOVEMENT})")
-        angle = DEFAULT_SERVO_MOVEMENT
+        angle = float(DEFAULT_SERVO_MOVEMENT)
 
     servo_info = get_servo_pin_from_direction()
     if servo_info is not None:
