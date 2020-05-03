@@ -70,7 +70,7 @@ def move(with_servo, angle):
     elif DIRECTION == 'home':
         with_servo.mid()
 
-    sleep(1)
+    sleep(0.5)
 
     write_current_servo_angle_to_file(servo['key'], with_servo.angle)
 
@@ -91,12 +91,12 @@ def main():
             min_pulse_width=0.0006,
             max_pulse_width=0.0024
         )
-        print(servo.angle)
+        print(get_config())
         move(servo, angle)
     else:
         print("The available directions are: up, down, right and left.")
     
-    print(servo.angle)
+    print(get_config())
 
 
 # Execute script
