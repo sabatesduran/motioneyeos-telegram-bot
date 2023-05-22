@@ -1,5 +1,5 @@
 rpi.gpio==0.7.0
 gpiozero==1.5.1
-requests==2.20.0
+requests==2.31.0
 python-dotenv==0.12.0
 python-telegram-bot==12.6.1
